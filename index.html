@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماشین حساب من</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="main-box">
+        <div class="top-part">
+            <h2>پروژه ماشین حساب</h2>
+            <button onclick="toggleHelp()" class="help-btn">راهنما</button>
+        </div>
+
+        <div id="help-text" class="help-box" style="display: none;">
+            <p>کار با این ماشین حساب ساده است:</p>
+            <ul>
+                <li>برای توان: عدد اول + دکمه توان + عدد دوم + مساوی</li>
+                <li>برای سینوس و... عدد رو بنویسید و دکمه رو بزنید</li>
+                <li>برای تبدیل مبنا: عدد رو پایین بنویسید و دکمه تبدیل رو بزنید</li>
+            </ul>
+        </div>
+
+        <div class="screen">
+            <input type="text" id="result" readonly placeholder="0">
+        </div>
+
+        <div class="keys">
+            <button class="sci" onclick="mathFunc('sin')">sin</button>
+            <button class="sci" onclick="mathFunc('cos')">cos</button>
+            <button class="sci" onclick="mathFunc('tan')">tan</button>
+            <button class="sci" onclick="mathFunc('sq')">√</button>
+            
+            <button class="sci" onclick="mathFunc('log')">log</button>
+            <button class="sci" onclick="setOp('^')">^</button>
+            <button class="danger" onclick="clr()">C</button>
+            <button class="danger" onclick="del()"> پاک</button>
+
+            <button onclick="addNum(7)">7</button>
+            <button onclick="addNum(8)">8</button>
+            <button onclick="addNum(9)">9</button>
+            <button class="op" onclick="setOp('/')">÷</button>
+
+            <button onclick="addNum(4)">4</button>
+            <button onclick="addNum(5)">5</button>
+            <button onclick="addNum(6)">6</button>
+            <button class="op" onclick="setOp('*')">×</button>
+
+            <button onclick="addNum(1)">1</button>
+            <button onclick="addNum(2)">2</button>
+            <button onclick="addNum(3)">3</button>
+            <button class="op" onclick="setOp('-')">-</button>
+
+            <button onclick="addNum('.')">.</button>
+            <button onclick="addNum(0)">0</button>
+            <button class="equal" onclick="calc()">=</button>
+            <button class="op" onclick="setOp('+')">+</button>
+        </div>
+
+        <div class="mabna-box">
+            <h3>تبدیل مبنا</h3>
+            <input type="text" id="numMabna" placeholder="عدد ورودی">
+            
+            <div class="selects">
+                <select id="fromM">
+                    <option value="10">ده‌دهی (10)</option>
+                    <option value="2">باینری (2)</option>
+                    <option value="8">اکتال (8)</option>
+                </select>
+                <span>به</span>
+                <select id="toM">
+                    <option value="2">باینری (2)</option>
+                    <option value="10">ده‌دهی (10)</option>
+                    <option value="8">اکتال (8)</option>
+                </select>
+            </div>
+            
+            <button onclick="doConvert()" class="conv-btn">تبدیل کن</button>
+            <p id="resMabna">...</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
